@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>API Posts Viewer</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>View Posts from API🔍</h1>
+    <div class="input-area">
+      <input type="number" id="postIdInput" placeholder="Enter max ID" min="1" />
+      <button onclick="fetchPosts()">Show Posts</button>
+      
+    </div>
+    <div id="loadingIndicator" style="display: none; margin-top: 10px;">
+        <img src="loading.gif" alt="Loading..." width="60">
+      </div>
+    <div id="postsContainer" class="posts"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

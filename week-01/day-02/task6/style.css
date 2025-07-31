@@ -1,0 +1,68 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to right, #8e2de2, #4a00e0);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.container {
+  text-align: center;
+  animation: fadeIn 1.5s ease;
+}
+
+.card {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 2px solid #ffffff33;
+  padding: 40px 60px;
+  border-radius: 20px;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4);
+}
+
+.card h1 {
+  font-size: 2.8rem;
+  margin: 0 0 20px 0;
+  color: #fff;
+}
+
+input#radiusInput {
+  padding: 10px 15px;
+  border-radius: 8px;
+  border: none;
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  width: 100%;
+  max-width: 250px;
+  outline: none;
+}
+
+button#calcBtn {
+  padding: 10px 25px;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  border: none;
+  background-color: #6a00f4;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button#calcBtn:hover {
+  background-color: #8e2de2;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}

@@ -1,0 +1,23 @@
+footer a {
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: #0d6efd;
+}
+
+footer h6 {
+  letter-spacing: 0.5px;
+}
+
+footer ul li {
+  margin-bottom: 0.5rem;
+}
+
+footer .text-muted {
+  color: #adb5bd !important; 
+}
+
+footer .text-muted .highlight {
+  color: #ffffff; 
+}

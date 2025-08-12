@@ -1,0 +1,22 @@
+<div class="container mt-4">
+<div class="card-grid">
+  <div class="modern-card" *ngFor="let post of displayPosts">
+    <div class="card-image-container">
+      <img [src]="post.imgurl" class="card-img" alt="Post image"/>
+      <div class="card-badge">New</div>
+    </div>
+    <div class="card-content">
+      <h3 class="card-title">{{post.title}}</h3>
+      <p class="card-text">{{post.body}}</p>
+      <div class="card-actions">
+        <button class="btn-delete" (click)="deletePost(post.id)">
+          <i class="bi bi-trash"></i> Delete
+        </button>
+        <button class="btn-view">
+          <i class="bi bi-eye"></i> Edit
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

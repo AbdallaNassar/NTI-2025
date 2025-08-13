@@ -1,0 +1,21 @@
+.navbar-brand {
+  letter-spacing: 1px;
+}
+
+.nav-link {
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.nav-link:hover {
+  color: #ffd700 !important;
+  transform: translateY(-2px);
+}
+
+.btn {
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #ffd700;
+  color: black;
+}

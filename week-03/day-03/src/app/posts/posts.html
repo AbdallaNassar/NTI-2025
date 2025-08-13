@@ -1,0 +1,71 @@
+<!-- زر التبديل -->
+<button class="btn btn-primary mb-3" (click)="toggleForm()">
+  <i class="bi" [ngClass]="showform ? 'bi-x-circle' : 'bi-plus-circle'"></i>
+  {{ showform ? 'Hide Form' : 'Add New Post' }}
+</button>
+
+<!-- الكروت -->
+<div class="modern-card" *ngFor="let post of displayPosts">
+
+
+
+  <div class="card-image-container">
+          <app-user [userid]="post.userid" [createdate]="post.createdate" 
+      style="position: absolute; top: 10px; left: 10px; z-index: 10;">
+    </app-user>
+    <img [src]="post.imgurl" class="card-img" alt="Post image"/>
+    <div class="card-badge">New</div>
+  </div>
+
+  <div class="card-content">
+    <h3 class="card-title">{{post.title}}</h3>
+    <p class="card-text">{{post.body}}</p>
+    <div class="card-actions">
+      <button class="btn-delete" (click)="deletePost(post.id)">
+        <i class="bi bi-trash"></i> Delete
+      </button>
+      <button class="btn-view">
+        <i class="bi bi-eye"></i> Edit
+      </button>
+      <button class="btn-like" (click)="likecounter(post)">
+        <i class="bi bi-heart" [ngClass]="{'liked': post.like}"></i> {{post.likes}}
+      </button>
+    </div>
+  </div>
+
+</div>
+
+
+<div *ngIf="showform" class="form-container">
+  <form (ngSubmit)="addpost()" #postForm="ngForm" novalidate>
+    
+    <div class="mb-3">
+      <label class="form-label">Title</label>
+      <input type="text" class="form-control" name="title" required [(ngModel)]="newPost.title" #title="ngModel">
+      <div *ngIf="title.invalid && title.touched" class="error">Title is required</div>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Body</label>
+      <textarea class="form-control" name="body" required [(ngModel)]="newPost.body" #body="ngModel"></textarea>
+      <div *ngIf="body.invalid && body.touched" class="error">Body is required</div>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Image URL</label>
+      <input type="url" class="form-control" name="imageUrl" required [(ngModel)]="newPost.imgurl" #imageUrl="ngModel">
+      <div *ngIf="imageUrl.invalid && imageUrl.touched" class="error">URL is required</div>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">User ID</label>
+      <input type="number" class="form-control" name="userid" required [(ngModel)]="newPost.userid" #userid="ngModel">
+      <div *ngIf="userid.invalid && userid.touched" class="error">User ID is required</div>
+    </div>
+
+ <button type="submit" class="btn btn-primary w-100" [disabled]="postForm.invalid">
+    <i class="bi bi-save"></i> Submit to add new post
+  </button>
+    
+  </form>
+</div>

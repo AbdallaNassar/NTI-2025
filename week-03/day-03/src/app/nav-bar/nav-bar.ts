@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-nav-bar',
@@ -7,10 +7,5 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   styleUrl: './nav-bar.css'
 })
 export class NavBar {
-  @Input() showform = false;
-  @Output() toggleFormEvent = new EventEmitter<void>();
 
-  toggleForm() {
-    this.toggleFormEvent.emit();
-  }
 }

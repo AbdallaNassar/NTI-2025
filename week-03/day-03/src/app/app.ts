@@ -8,9 +8,5 @@ import { Component, signal } from '@angular/core';
 })
 export class App {
   protected readonly title = signal('day-02');
-  showform = false;
 
-  toggleForm() {
-    this.showform = !this.showform;
-  }
 }

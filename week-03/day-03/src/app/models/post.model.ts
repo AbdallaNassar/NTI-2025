@@ -4,7 +4,7 @@
   id:number,
   userid:number,
   imgurl:string,
-  createdate: Date,
+  date:Date,
   like:boolean,
   likes:number
 }
